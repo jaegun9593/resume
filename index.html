@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>황재건(JAEKEON HWANG) - 이력서</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a5f;
+            --accent-color: #3498db;
+            --accent-bg: #e8f4fc;
+            --accent-light: #d4edfc;
+            --text-dark: #1e3a5f;
+            --text-light: #5a6d7e;
+            --border-color: #c5d9e8;
+            --section-bg: #f0f7fc;
+            --highlight-border: #2980b9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #e8f4fc 0%, #d4edfc 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 25px rgba(30, 58, 95, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 30px 30px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            color: #a8d4f0;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px 30px;
+            font-size: 0.9em;
+            color: #e8f4fc;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .section-title .emoji {
+            font-size: 1.1em;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            background: var(--section-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-box h4 {
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .skill-box p {
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+
+        /* AI Tools Note */
+        .ai-note {
+            background: linear-gradient(135deg, #e8f4fc 0%, #d4edfc 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .ai-note h4 {
+            color: var(--highlight-border);
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .ai-note p {
+            font-size: 0.85em;
+            color: var(--text-dark);
+        }
+
+        /* Experience */
+        .experience-item {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 2px 12px rgba(52, 152, 219, 0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .company-name {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: var(--primary-color);
+        }
+
+        .position {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        .period {
+            color: var(--accent-color);
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
+
+        .experience-item li {
+            margin-bottom: 5px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .experience-item.half {
+            margin-bottom: 0;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: var(--section-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .tech-category {
+            font-size: 0.9em;
+        }
+
+        .tech-category strong {
+            color: var(--primary-color);
+        }
+
+        /* Projects */
+        .project-box {
+            background: linear-gradient(135deg, #e8f4fc 0%, #f0f7fc 100%);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .project-box h4 {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .project-box p {
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+
+        /* Education & Summary */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-box h4 {
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .info-box p, .info-box li {
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box li {
+            margin-bottom: 3px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 0.85em;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+        }
+
+        /* Page 2 Styles */
+        .page-break {
+            page-break-before: always;
+            border-top: 3px solid var(--accent-color);
+            margin-top: 30px;
+            padding-top: 30px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        /* Core Skills Table */
+        .core-skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 0.9em;
+        }
+
+        .core-skills-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            width: 120px;
+        }
+
+        .core-skills-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Detailed Experience */
+        .detailed-exp {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .detailed-exp .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .detailed-exp .company {
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .detailed-exp .duration {
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+
+        .detailed-exp .project-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .detailed-exp .tech-env {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .detailed-exp ul {
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
+
+        .detailed-exp li {
+            margin-bottom: 4px;
+        }
+
+        /* Final Tech Stack Table */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85em;
+        }
+
+        .tech-table th {
+            background: var(--section-bg);
+            padding: 10px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            width: 100px;
+        }
+
+        .tech-table td {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .header, .footer {
+                background: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .skills-grid, .two-column, .info-grid, .tech-stack {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PAGE 1: 이력서 -->
+        <header class="header">
+            <h1>황재건 (JAEKEON HWANG)</h1>
+            <p class="subtitle">개발 PM/PL | 총 경력 21년</p>
+            <div class="contact-info">
+                <span>📅 1979.10.16</span>
+                <span>📍 서울시 중구 중림로 10</span>
+                <span>📞 010-9492-9593</span>
+                <span>✉️ jaegun9593@gmail.com</span>
+                <span>🔗 linkedin.com/in/jaekeon</span>
+                <!--<span>🐙 github.com/eightynine01</span>-->
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- 핵심 역량 -->
+            <section class="section">
+                <h2 class="section-title"><span class="emoji">🔧</span> 핵심 역량</h2>
+                <div class="skills-grid">
+                    <div class="skill-box">
+                        <h4>프로젝트 PM/PL</h4>
+                        <p><strong>다수 SI 프로젝트 PM/PL</strong><br>고객 요구사항 분석 및 제안서 작성, 프로젝트 계획 및 일정 수립<br>프로젝트 인원 및 팀원 관리</p>
+                    </div>
+                    <div class="skill-box">
+                        <h4>클라우드 플랫폼</h4>
+                        <p><strong>AWS, Azure, GCP</strong><br>Cloud 아키텍처 분석/설계/구축, 권한관리, 백업/DR 전략수립/구축</p>
+                    </div>
+                    <div class="skill-box">
+                        <h4>생성형 AI 관련</h4>
+                        <p><strong>LangChain LangGraph, RAG, vLLM</strong><br>LLM 챗봇 개발, 스페이스/모델/프롬프트 관리<br>모델 서빙/추론요청 서비스</p>
+                    </div>
+                    <div class="skill-box">
+                        <h4>Devops</h4>
+                        <p><strong>Kubernetes, Docker, ArgoCD, Jenkins, Github Action, Gitlab Runner</strong><br>컨테이너 오케스트레이션, CI/CD 파이프라인</p>
+                    </div>
+                    <div class="skill-box">
+                        <h4>데이터베이스</h4>
+                        <p><strong>MySQL, Oracle, PostgreSQL, MongoDB, BigQuery</strong><br>데이터베이스 설계 및 구축, 데이터 마이그레이션</p>
+                    </div>
+                    <div class="skill-box">
+                        <h4>Application 개발</h4>
+                        <p><strong>Java</strong> (Spring Boot, Mybatis), <strong>Python</strong> (FastAPI)<br>RESTful API 설계, 마이크로서비스 아키텍처</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI 도구 활용 -->
+            <div class="ai-note">
+                <h4>💡 NVIDIA H100 장비 초기설정/셋업/추론요청 서비스 제공</h4>
+                <p>H100 장비에 GPU Driver 설치 및 CUDA Toolkit 설치, Kubernetes 설치 및 구성<br>vLLM을 이용해 Llama 8B와 같은 SLM 모델 구동 및 추론 요청 및 인증 API 서비스 제공</p>
+            </div>
+
+            <!-- 경력 사항 -->
+            <section class="section">
+                <h2 class="section-title"><span class="emoji">💼</span> 경력 사항</h2>
+                            
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company-name">시프트원</span>
+                            <span class="position"> | IT 서비스팀 팀장</span>
+                        </div>
+                        <span class="period">2024.08 ~ 현재</span>
+                    </div>
+                    <ul>
+                        <li><strong>SK 하이닉스 HCP 고도화 & 비정형 데이터 서비스 구축 프로젝트 PL</strong><br>LLM 모델 관리 및 서빙관리 LLMOps 플랫폼 구축<br>LLM 모델 파일 관리를 위한 Object Hub 플랫폼 구축<br>Vector DB(Milvus, OpenSearch, PgvectorDB) Managed 서비스 기획 및 구축<br>RAG를 이용한 데이터 전처리(Parsing, Chunking, Embedding) 파이프라인 플랫폼 서비스 기획 및 Frontend 구축<br>GPU 서버 장비 관리 서비스 및 Dashboard 플랫폼 구축</li>
+                        <li><strong>KTDS ABC Lab LLM AI 챗봇 서비스 구축 프로젝트 PL</strong><br>LLM 챗봇 어플리케이션 서비스 설계 및 구축<br>LLM 어플리케이션 서비스 기획 및 화면 설계 협의 및 디자인 구성 지원<br>GPU 장비에 LLM 모델 배포/관리 아키텍처 설계 및 구성</li>
+                    </ul>
+                </div>                
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company-name">유호스트</span>
+                            <span class="position"> | 프리랜서</span>
+                        </div>
+                        <span class="period">2024.02 ~ 2024.06</span>
+                    </div>
+                    <ul>
+                        <li><strong>LG HR 커리어스 2.0 포탈 구축</strong><br>Spring Boot, React를 이용한 표준 프레임웍 설계 및 CI/CD 구성<br>SINGLEX HR과 연계를 위한 연계 인터페이스 설계 및 개발</li>
+                        <li><strong>LG U+ 차세대 HR 인터페이스 변경 분석/설계</strong><br>구버전의 LG U+ SAP HR을 LG CNS SINGLEX 플랫폼 HR로 변경하기 위해 현재 연계 인터페이스 아키텍처 분석<br>LG CNS SINGLEX HR 도입을 위한 연계 인터페이스 설계<br>아키텍처 개선 방안 가이드 및 문서 작성<br>차세대 HR 도입을 위한 개발공수 산정 및 보고서 작성</li>                        
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company-name">스타랩스</span>
+                            <span class="position"> | 프리랜서</span>
+                        </div>
+                        <span class="period">2022.09 ~ 2024.01</span>
+                    </div>
+                    <ul>
+                        <li><strong>LG전자 EBS 차세대 빌링 시스템 분석/설계</strong><br>EBS 시스템 분석 및 MSA 아키텍처 패턴 적용방안 제안<br>어플리케이션 개선 방안 설계 및 도출</li>
+                        <li><strong>LG CNS ESG Portal 시스템 구축</strong><br>ESG Portal 시스템 설계 및 구축<br>개발 아키텍처 수립 및 보안성 검토 진행<br>CI/CD 배포 환경 설계 및 구성</li>                        
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company-name">(주)Coupang</span>
+                            <span class="position"> | Cloud Platform Senior Engineer</span>
+                        </div>
+                        <span class="period">2018.02 ~ 2022.03</span>
+                    </div>
+                    <ul>
+                        <li><strong>Coupang 전사 내 Cloud Platform 환경 설계/구축/운영</strong><br>AWS Cloud를 이용한 인프라 아키텍처 설계, 구축 및 운영<br>백오피스 사내 인증 시스템 개발 및 운영<br>어플리케이션 배포 CI/CD Platform 서비스 개발 및 운영</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company-name">My Music Taste</span>
+                            <span class="position"> | Senior Cloud Architect</span>
+                        </div>
+                        <span class="period">2017.02 ~ 2018.02</span>
+                    </div>
+                    <ul>
+                        <li><strong>AWS Cloud 인프라 및 CI/CD 설계, 구축 및 운영</strong><br>AWS Cloud를 이용한 인프라 아키텍처 설계, 구축 및 운영<br>어플리케이션 배포 서비스 설계, 구축 및 운영</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company-name">Bitfinder</span>
+                            <span class="position"> | Senior Cloud Architect</span>
+                        </div>
+                        <span class="period">2015.09 ~ 2016.12</span>
+                    </div>
+                    <ul>
+                        <li><strong>AWS Cloud 인프라 및 CI/CD 설계, 구축 및 운영</strong><br>AWS Cloud를 이용한 인프라 아키텍처 설계, 구축 및 운영<br>어플리케이션 배포 서비스 설계, 구축 및 운영</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company-name">10여개 이상의 프로젝트</span>
+                            <span class="position"> | Java Developer</span>
+                        </div>
+                        <span class="period">2003.02 ~ 2015.08</span>
+                    </div>
+                    <ul>
+                        <li><strong>Java Application 분석/설계/개발</strong><br>Java 프로젝트 분석/설계/개발 리딩 경험<br>사내 Spring Framework 설계 및 구축<br>인터페이스 허브(Socket, SOAP) 서비스 구축 및 개발<br>다수 Web 포털 사이트 설계 및 개발</li>
+                    </ul>
+                </div>
+                
+            </section>
+
+            <!-- 기술 스택 -->
+            <section class="section">
+                <h2 class="section-title"><span class="emoji">🛠</span> 기술 스택</h2>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <p><strong>협업툴:</strong> JIRA, Confluence, Git, SVN, Notion, Slack, Teams</p>                        
+                        <p><strong>설계:</strong> UML, Usecase Diagram, Sequence Diagram</p>
+                        <p><strong>언어:</strong> Java, Python, JavaScript</p>                        
+                        <p><strong>Backend:</strong> Spring Boot, FastAPI</p>                        
+                        <p><strong>DB:</strong> PostgreSQL, MySQL, Oracle, MongoDB, Redis</p>
+                    </div>
+                    <div class="tech-category">
+                        <p><strong>인프라:</strong> Docker, Kubernetes, Helm, ArgoCD</p>
+                        <p><strong>CI/CD:</strong> ArgoCD, Jenkins, Github Action, Gitlab Runner</p>
+                        <p><strong>클라우드:</strong> AWS, Azure, GCP</p>
+                        <p><strong>메시징:</strong> Apache Kafka, RabbitMQ</p>
+                        <p><strong>모니터링:</strong> Prometheus, Grafana, ELK Stack</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 주요 프로젝트 성과 -->
+            <section class="section">
+                <h2 class="section-title"><span class="emoji">🏆</span> 주요 프로젝트 성과</h2>
+                <div class="project-box">
+                    <h4>SK 하이닉스 프로젝트 팀 리더십</h4>
+                    <p>19명 규모 디자인/기획/Frontend/Backend 프로젝트 팀 리드<br>7개 프로젝트 성공적 완료</p>
+                </div>
+                <div class="project-box">
+                    <h4>생성형 AI 관련 Platform 서비스 구축</h4>
+                    <p>LLM 챗봇 개발, LLM Ops, RAG, Data Pipeline, GPU 서버관리</p>
+                    <p>스페이스 관리, 프롬프트 관리, 모델 관리, 모델 서빙, 모델 사용량 관리<br>데이터 파이프라인 구성(Data Parsing/Chunking/Embedding)<br>GPU 장비 셋업 및 관리, SLM 모델 서빙 및 추론요청 서비스 제공</p>
+                </div>
+                <div class="project-box">
+                    <h4>Coupang 클라우드 아키텍처 수립 및 플랫폼 구축</h4>
+                    <p>AWS-IDC 하이브리드 클라우드 환경 구축<br>클라우드 권한 인증 체계 구성 및 FinOps 구성 및 관리<br>전사 소스 형상 관리 및 배포 관리를 위해 Gitlab에서 Github으로 마이그레이션 경험<br>다중 DB 백업 및 DR 구성</p>
+                </div>
+                
+            </section>
+
+            <!-- 학력 / 교육 / 요약 -->
+            <section class="section">
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h4>🎓 학력</h4>
+                        <p><strong>선문대학교</strong></p>
+                        <p>미생물학과 중퇴</p>
+                        <p>1998.03 - 2000.02</p>
+                        <p><strong>학점은행제</strong></p>
+                        <p>전자계산학 졸업</p>
+                        <p>2009.03 - 2013.02</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>📚 교육 및 자격</h4>
+                        <ul>
+                            <li>정보처리기사(한국산업인력공단) - 2012.11</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h4>📋 요약</h4>
+                        <p><strong>21년</strong> 소프트웨어 개발 경험</p>
+                        <p><strong>6년</strong> 스타트업 근무 경험</p>
+                        <p><strong>전문분야:</strong> 생성형 AI, 클라우드, DevOps</p>
+                        <p><strong>리더십:</strong> 기술팀 리드, 프로젝트 관리</p>
+                    </div>
+                    <div class="info-box">
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer">
+            작성일: 2026년 1월 8일
+        </div>
+    </div>
+</body>
+</html>
